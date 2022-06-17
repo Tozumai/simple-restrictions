@@ -26,6 +26,6 @@ hook.Add("CanProperty", "RestrictPlayerProperty", function( ply, property, entit
 
 	if ( GetConVar("RestrictionsEnabled"):GetBool() == false ) then return end
 
-	RestrictionsTriggered( ply, property, entity )
+	RestrictionsTriggeredProperty( ply, property, entity )
 
 end)
