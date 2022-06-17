@@ -2,7 +2,7 @@ Restrictions = Restrictions or {}
 
 
 -- Turn on/off this addon, it essentiually won't run. 
-CreateConVar("RestrictionsEnabled", 1, FCVAR_ARCHIVE, "Enable or disable NoTarget", 0, 1)
+CreateConVar("RestrictionsEnabled", 1, FCVAR_ARCHIVE, "Enable or disable Restrictions", 0, 1)
 
 -- Turn on/off the allowed use only feature.
 CreateConVar("RestrictionsWhitelist", 0, FCVAR_ARCHIVE, "Enable or disable RestictionsWhitelist", 0, 1)
