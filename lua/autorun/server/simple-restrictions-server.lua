@@ -1,6 +1,6 @@
 util.AddNetworkString("RestrictionsNotify")
 
-local function RestrictionsTriggered( commandPlayer, commandText, entity )
+local function RestrictionsTriggeredProperty( commandPlayer, commandText, entity )
 
 	local plyAllowed = Restrictions.Whitelist[commandPlayer:GetUserGroup()]
 
