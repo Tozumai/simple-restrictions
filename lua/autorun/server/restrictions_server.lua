@@ -1,4 +1,7 @@
 util.AddNetworkString("RestrictionsNotify")
+util.AddNetworkString("RestrictionsSpawnMenuOpen")
+
+-- Code for Properties
 
 local function RestrictionsTriggeredProperty( commandPlayer, commandText, entity )
 
@@ -8,23 +11,19 @@ local function RestrictionsTriggeredProperty( commandPlayer, commandText, entity
 
 		Notification = "You cannot use "..commandText.." on "..entity:GetName()
 
-		if ( string.len( entity:GetName() ) == 0 )
-
-			Notification = "You cannot use "..commandText.." on that object!"
-
-		end
-
 		net.Start("RestrictionsNotify")
 		net.WriteString(Notification)
 		net.Send(commandPlayer)
 
 		return false
 
-	else if ( plyAllowed or GetConVar("RestrictionsWhitelist"):GetBool() == false ) then
+	end
+
+	if ( plyAllowed or GetConVar("RestrictionsWhitelist"):GetBool() == false ) then
 
 		return true
 
-	end 
+	end
 
 end
 
