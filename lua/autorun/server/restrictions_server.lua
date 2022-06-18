@@ -8,6 +8,12 @@ local function RestrictionsTriggeredProperty( commandPlayer, commandText, entity
 
 		Notification = "You cannot use "..commandText.." on "..entity:GetName()
 
+		if ( string.len( entity:GetName() ) == 0 )
+
+			Notification = "You cannot use "..commandText.." on that object!"
+
+		end
+
 		net.Start("RestrictionsNotify")
 		net.WriteString(Notification)
 		net.Send(commandPlayer)
