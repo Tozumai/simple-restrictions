@@ -14,7 +14,7 @@ local function RestrictionsTriggeredProperty( commandPlayer, commandText, entity
 
 		return false
 
-	else 
+	else if ( plyAllowed or GetConVar("RestrictionsWhitelist"):GetBool() == false ) then
 
 		return true
 
@@ -26,6 +26,8 @@ hook.Add("CanProperty", "RestrictPlayerProperty", function( ply, property, entit
 
 	if ( GetConVar("RestrictionsEnabled"):GetBool() == false ) then return end
 
-	RestrictionsTriggeredProperty( ply, property, entity )
+	local Allow = RestrictionsTriggeredProperty( ply, property, entity )
+
+	return Allow 
 
 end)
